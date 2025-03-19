@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer components{
+    .flex-center{
+        @apply flex justify-center ;
+    }
+}
+
+@layer utilities{
+    .bg-primary {
+        background-color:  rgb(29, 28, 28);
+    }
+    .bg-secondary{
+        background-color: #B2A5FF;
+    }
+    .text-primary{
+        color: #B2A5FF;
+    }
+}
