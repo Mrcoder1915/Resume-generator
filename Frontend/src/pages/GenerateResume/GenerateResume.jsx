@@ -1,55 +1,19 @@
 import React from 'react'
-import "../../styles/GenerateResume.css"
+
 import { useParams } from 'react-router-dom'
 import { layouts } from '../../templateLayout'
+import UserForm from './UserForm'
 
 const GenerateResume = () => {
   const {id} = useParams();
   const selecteLayout = layouts.find((layout) => layout.id == parseInt(id))
   console.log(selecteLayout)
   return (
-    <div className='generate-resume'>
-       <div className='generating-container'>
-          <div className="userInput">
-                <div className="navigate-buttons">
-                  <button>home</button>
-                  <div className="next-back-btn">
-                    <button>back</button>
-                    <button>next</button>
-                  </div>      
-                </div>
-             <div className="input-container">
-
-                <div className="title-container">
-                   <h2>Personal Information</h2>
-                   <h2>Ai</h2>
-                </div>
-
-                <div className="user-personal-input">
-                  <div className="input-field">
-                    <div className='input-container'>
-                      <label htmlFor="">First name</label>
-                      <input type="text" placeholder='Firstname'/>
-                    </div>
-                    <div className='input-container'>
-                      <label htmlFor="">Last name</label>
-                      <input type="text" placeholder='Lastname' />
-                    </div>
-                      
-                  </div>
-                  <div className="input-field">
-                      <input type="email" placeholder='Email Address'/>
-                  </div>
-                  <div className="input-field">
-                      <input type="text" placeholder='Address' />
-                  </div>
-                </div>
-             </div>
-
-          </div>
-
-        <div className='display-container'>
-          <div className="templates-content" style={{
+    <div className='w-full min-h-[100vh] h-auto bg-primary flex-center' >
+       <div className='absolute top-0 mt-20 w-[100%] h-auto bg-primary p-2.5 flex-around'>
+          <UserForm />
+        <div className='w-[600px] min-h-[83vh] h-auto'>
+          <div className=" h-w grid bg-white grid-cols-2 grid-rows-[1fr_3fr_1fr] gap-2.5" style={{
             gridTemplateAreas: selecteLayout.template
             }}>
               <div className="header"></div>
